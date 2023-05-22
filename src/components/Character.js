@@ -2,6 +2,7 @@ import PropTypes from "prop-types"
 import {Link} from "react-router-dom"
 import Detail from "../routes/Detail"
 import {useEffect, useState} from "react"
+import Header from "./Header"
 
 import styles from "../css/Character.module.css"
 
@@ -9,7 +10,9 @@ function Character({coverImg, title, id}){
 
     
     return(
+        
         <div className={styles.character}>
+            
             <img src={coverImg} className={styles.character_img}/>
             <div>
                 <h2 className={styles.character_title}>

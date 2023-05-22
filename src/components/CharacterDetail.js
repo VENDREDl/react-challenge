@@ -13,7 +13,7 @@ function CharacterDetail({title, link, type}){
     // console.log(dt)
 
     return(
-        <div>
+        <div className={styles.main}>
             
             {title != "" ?
                 <h3 className={styles.title}>

@@ -4,16 +4,53 @@ import Detail from "../routes/Detail"
 import DetailInfo from "../routes/DetailInfo"
 import styles from "../css/DetailInfo.module.css"
 
-function CharacterDetailInfo({title, thumbnail}){
+function CharacterDetailInfo({thumbnail, creators, role, characters}){
 
-    console.log(thumbnail)
+    // console.log(creators)
+    // console.log(role)
+    console.log(characters)
+
+    const rendering = () => {
+        const result = [];
+
+        for(let i = 0; i < creators.length; i++){
+            // if(creators.length == 0){
+            //     result.push(<div>{"None"}</div>)
+            // }
+
+            if(i < 15){
+                result.push(<div>{creators[i] + " - " + role[i]}</div>)
+            }
+        }
+
+        return result
+    }
+
+    const renderCharacters = () => {
+        const character = [];
+
+        for(let i = 0; i < characters.length; i++){
+            if(i < 15){
+                character.push(<div>{characters[i]}</div>)
+            }
+        }
+
+        return character
+    }
 
     return(
         <div className={styles.detailInfo}>
-            <img src={thumbnail} className={styles.img}/>
-            {/* <h2 className={styles.title}>
-                {title}
-            </h2> */}
+            <img src={thumbnail} className={styles.img}/>    
+
+            <div className={styles.creators}>
+                <h1 className={styles.t}>Creators</h1>
+                {creators.length != 0 ? rendering() : "Nothing..."}
+            </div>
+            <div className={styles.characters}>
+                <h1 className={styles.t}>Characters</h1>
+                {renderCharacters()}
+            </div>
+            {/* <h3>{role}</h3> */}
         </div>
     )
 }

@@ -1,11 +1,19 @@
+html{
+    -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none
+}
+
 .title {
     color: white;
     
 }
 
 .img {
-    max-width: 400px;
-    margin-top: 10px;
+    min-width: 370px;
+    max-width: 370px;
+    border-radius: 50px;
 }
 
 .detailInfo {
@@ -16,4 +24,21 @@
     position: fixed;
     top: 0px;
     left: 0px;
+    color: white;
+}
+
+.creators {
+    position: absolute;
+    top: 0px;
+    left: 400px;
+}
+
+.characters {
+    position: absolute;
+    top: 0px;
+    left: 700px;
+}
+
+.t{
+    font-style: italic;
 }

@@ -11,7 +11,7 @@ function DetailInfo(){
     const [detailInfo, setDetailinfo] = useState()
     const [loading, setLoading] = useState(true);
 
-    console.log(x)
+    // console.log(x)
 
     const getDetailInfo = async() => {
         const json = await(
@@ -20,7 +20,9 @@ function DetailInfo(){
         )
         ).json();
 
-        console.log(`https://marvel-proxy.nomadcoders.workers.dev/v1/public/${x.type}/${x.id}`)
+        
+
+        // console.log(`https://marvel-proxy.nomadcoders.workers.dev/v1/public/${x.type}/${x.id}`)
    
         setDetailinfo(json.data.results)
         setLoading(false)
@@ -31,13 +33,14 @@ function DetailInfo(){
         getDetailInfo();
         console.log(`[Call API] Character Detail Info`)
         console.log(`[Rendering] Detail Info ${info}`)
+
+        // detailInfo.map(function(dt){
+        //     console.log(dt.creators)
+        // })
         
     }, [info])
 
     // title, thumbnail.path, 
-    // detailInfo.map(di => (
-
-    // ))
 
     return(
         <div>
@@ -46,8 +49,19 @@ function DetailInfo(){
                     {detailInfo.map(di => (
                 <CharacterDetailInfo 
                     // title={di.title}
-                    thumbnail={x.type == "stories" ? "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg" : di.thumbnail.path + '.jpg'}/>
-            ))}
+                    thumbnail={x.type == "stories" ? "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg" : di.thumbnail.path + '.jpg'}
+                    creators={di.creators.items.map(c => (
+                        c.name
+                    ))}
+                    role={di.creators.items.map(c => (
+                        c.role
+                    ))}
+                    characters={di.characters.items.map(c => (
+                        c.name
+                    ))}
+                    key={di.id}
+                    />
+           ))}
                 </div>
             )
             }
