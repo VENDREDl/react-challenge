@@ -1,9 +1,5 @@
 import PropTypes from "prop-types"
 import {Link} from "react-router-dom"
-import Detail from "../routes/Detail"
-import {useEffect, useState} from "react"
-import Header from "./Header"
-
 import styles from "../css/Character.module.css"
 
 function Character({coverImg, title, id}){

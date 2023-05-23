@@ -1,9 +1,6 @@
 import {useParams} from "react-router-dom"
 import {useEffect, useState} from "react"
 import CharacterDetail from "../components/CharacterDetail";
-import Character from "../components/Character"
-
-
 import styles from "../css/Detail.module.css"
 
 
