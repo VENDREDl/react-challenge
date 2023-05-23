@@ -9,6 +9,7 @@ html {
     display: flex;
     justify-content: center;
     margin-left: 30px;
+    background-color: #28282d;
   }
   
   .loader {
@@ -29,6 +30,7 @@ html {
     width: 80%;
     padding-top: 70px;
     margin-left: -30px;
+
   }
   
   @media screen and (max-width: 1090px) {

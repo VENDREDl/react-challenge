@@ -18,7 +18,7 @@ function CharacterDetailInfo({thumbnail, creators, role, characters}){
             //     result.push(<div>{"None"}</div>)
             // }
 
-            if(i < 15){
+            if(i < 14){
                 result.push(<div>{creators[i] + " - " + role[i]}</div>)
             }
         }
@@ -30,7 +30,7 @@ function CharacterDetailInfo({thumbnail, creators, role, characters}){
         const character = [];
 
         for(let i = 0; i < characters.length; i++){
-            if(i < 15){
+            if(i < 14){
                 character.push(<div>{characters[i]}</div>)
             }
         }
